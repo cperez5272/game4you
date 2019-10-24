@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    font-size: 25px;
+    font-weight: 400;
+}
+body {
+    background: azure; 
+}
+.avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 35%;
+    border: solid black 3px;
+}
+.intro {
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    padding: 20px;
+}
+.user_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: auto;
+}
+.search_bar {
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid rgb(184, 184, 184);
+}
+.submit {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+}
