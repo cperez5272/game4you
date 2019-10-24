@@ -1,0 +1,1 @@
+This is an app used to help new and experienced gamers to find their next game. All you gotta do is just type up a game you have played and this app will find games that are related to the game you have chosen. I hope you all enjoy. 
