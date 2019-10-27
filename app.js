@@ -20,7 +20,8 @@ function displayResults(responseJson){
 
 function getGames(game){
     console.log('getGames working fine');
-    fetch(`https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=${game}&type=games&info=1`)
+    const source = `https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=${game}&type=games&info=1`
+    fetch(source)
     .then(response => {
         console.log(response.Info);
         if(response.ok) {
