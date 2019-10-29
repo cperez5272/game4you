@@ -6,6 +6,9 @@
 body {
     background:#7ca5f0;
 }
+label {
+    text-align: center;
+}
 .avatar {
     display: block;
     margin-left: auto;
