@@ -8,15 +8,18 @@ function displayResults(responseJson){
     console.log('displayResults working fine')
     console.log(responseJson)
     $('.result_list').empty();
-  
+
+    if (responseJson.Similar.Info[0].Type == 'unknown') {
+      alert('Sorry please come back another time. We are down at the moment.');
+      return;
+   }
     const displayResult = responseJson.Similar.Results.splice(0, 5)
     console.log(displayResult);
-    const elm = displayResult.map(li => `<li><p>${li.Name}</p><p>${li.wTeaser}</p><p><iframe src="${li.yUrl}" height="300" width="500"</iframe></p></li>`)
+    const elm = displayResult.map(li => `<li><p>${li.Name}</p><p>${li.wTeaser}</p><p><iframe src="${li.yUrl}" class="youtube"></iframe></p></li>`)
   
     $('.result_list').append(elm);
     $('#results').removeClass('hidden');
   }
-
 
 function getGames(game){
     console.log('getGames working fine');
@@ -31,7 +34,6 @@ function getGames(game){
       .then(responseJson => displayResults(responseJson))
       .catch(error => alert('Sorry but you must have typed something wrong!'));
 }
-
 
 function watchForm(){
   $('.user_form').submit(function(event){
