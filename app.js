@@ -6,7 +6,6 @@ const searchURL = `https://tastedive.com/api/similar`;
 
 function displayResults(responseJson){
     $('.result_list').empty();
-    console.log(responseJson)
 
     if (responseJson.Similar.Info[0].Type == 'unknown') {
       $('#results').append(`<p>Your search does not return any result. Please enter the correct term to search.</p>`)
