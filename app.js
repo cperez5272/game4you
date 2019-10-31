@@ -5,12 +5,12 @@ const searchURL = `https://tastedive.com/api/similar`;
 
 
 function displayResults(responseJson){
-    console.log('displayResults working fine')
-    console.log(responseJson)
     $('.result_list').empty();
+    console.log(responseJson)
 
     if (responseJson.Similar.Info[0].Type == 'unknown') {
-      alert('Sorry please come back another time. We are down at the moment.');
+      $('#results').append(`<p>Your search does not return any result. Please enter the correct term to search.</p>`)
+      // alert('Sorry please come back another time. We are down at the moment.');
       return;
    }
     const displayResult = responseJson.Similar.Results.splice(0, 5)
@@ -22,11 +22,9 @@ function displayResults(responseJson){
   }
 
 function getGames(game){
-    console.log('getGames working fine');
     const source = `https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q=${game}&type=games&info=1`
     fetch(source)
     .then(response => {
-        console.log(response.Info);
         if(response.ok) {
           return response.json();
         }
@@ -40,7 +38,6 @@ function watchForm(){
     event.preventDefault();
     $('.intro').hide();
     let game = $('#search_bar').val()
-    console.log('button working')
     getGames(game)
   })
 }
