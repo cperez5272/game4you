@@ -30,7 +30,7 @@ label {
     margin-right: 20%;
     width: auto;
 }
-.search_bar {
+#search_bar {
     text-align: center;
     padding: 5px;
     width: 100%;

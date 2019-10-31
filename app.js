@@ -39,7 +39,7 @@ function watchForm(){
   $('.user_form').submit(function(event){
     event.preventDefault();
     $('.intro').hide();
-    let game = $('.search_bar').val()
+    let game = $('#search_bar').val()
     console.log('button working')
     getGames(game)
   })
