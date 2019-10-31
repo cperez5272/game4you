@@ -15,7 +15,7 @@ function displayResults(responseJson){
    }
     const displayResult = responseJson.Similar.Results.splice(0, 5)
     console.log(displayResult);
-    const elm = displayResult.map(li => `<li><p>${li.Name}</p><p>${li.wTeaser}</p><p><iframe src="${li.yUrl}" class="youtube"></iframe></p></li>`)
+    const elm = displayResult.map(powa => `<li><p>${powa.Name}</p><p>${powa.wTeaser}</p><p><iframe src="${powa.yUrl}" class="youtube"></iframe></p></li>`)
   
     $('.result_list').append(elm);
     $('#results').removeClass('hidden');
