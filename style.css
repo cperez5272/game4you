@@ -7,6 +7,7 @@ body {
     background:#7ca5f0;
 }
 label {
+    font-family: 'Dosis', sans-serif;
     text-align: center;
 }
 .avatar {
@@ -42,6 +43,9 @@ label {
     margin-top: 20px;
     background-color: black;
     color: white;
+}
+.clear_dot {
+    list-style-type: none;
 }
 .youtube {
     width: 600px;

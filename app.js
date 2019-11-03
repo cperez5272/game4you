@@ -8,13 +8,11 @@ function displayResults(responseJson){
     $('.result_list').empty();
 
     if (responseJson.Similar.Info[0].Type == 'unknown') {
-      $('#results').append(`<p>Your search does not return any result. Please enter the correct term to search.</p>`)
-      // alert('Sorry please come back another time. We are down at the moment.');
+      $('#results').append(`<p>No results found.</p>`)
       return;
    }
     const displayResult = responseJson.Similar.Results.splice(0, 5)
-    console.log(displayResult);
-    const elm = displayResult.map(powa => `<li><p>${powa.Name}</p><p>${powa.wTeaser}</p><p><iframe src="${powa.yUrl}" class="youtube"></iframe></p></li>`)
+    const elm = displayResult.map(powa => `<li class="clear_dot"><p>${powa.Name}</p><p>${powa.wTeaser}</p><p><iframe src="${powa.yUrl}" class="youtube"></iframe></p></li>`)
   
     $('.result_list').append(elm);
     $('#results').removeClass('hidden');
@@ -29,7 +27,7 @@ function getGames(game){
         }
   })
       .then(responseJson => displayResults(responseJson))
-      .catch(error => alert('Sorry but you must have typed something wrong!'));
+      .catch(error => alert('No results found.'));
 }
 
 function watchForm(){
