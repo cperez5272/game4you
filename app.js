@@ -6,11 +6,6 @@ const searchURL = `https://tastedive.com/api/similar`;
 
 function displayResults(responseJson){
     $('.result_list').empty();
-
-    if (responseJson.Similar.Info[0].Type == 'unknown') {
-      $('#results').append(`<p>No results found.</p>`)
-      return;
-   }
     const displayResult = responseJson.Similar.Results.splice(0, 5)
     const elm = displayResult.map(powa => `<li class="clear_dot"><p>${powa.Name}</p><p>${powa.wTeaser}</p><p><iframe src="${powa.yUrl}" class="youtube"></iframe></p></li>`)
   
@@ -27,7 +22,7 @@ function getGames(game){
         }
   })
       .then(responseJson => displayResults(responseJson))
-      .catch(error => alert('No results found.'));
+      .catch(error => $('#results').append(`<p>No results found</p>`));
 }
 
 function watchForm(){
